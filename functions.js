@@ -1,9 +1,11 @@
-window.onresize = drawHeader;
-function drawHeader() {
-  /** @type {CanvasRenderingContext2D} */
-  let context;
+/** @type {CanvasRenderingContext2D} */
+let context;
 
-  let canvas = document.getElementById("canvas1");
+let canvas = document.getElementById("canvas1");
+
+window.onresize = drawMainPage;
+
+function drawMainPage() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   context = canvas.getContext("2d");
@@ -14,12 +16,12 @@ function drawHeader() {
   context.clearRect(0,0, width, height)
   context.fillStyle = "#F9F8F3";
   context.beginPath();
-  context.arc(width/6-width/12, 100, width/10, 0, Math.PI);
-  context.arc(width/3-width/12, 100, width/10, 0, Math.PI);
-  context.arc(width/2-width/12, 100, width/10, 0, Math.PI);
-  context.arc(width/6*4-width/12, 100, width/10, 0, Math.PI);
-  context.arc(width/6*5-width/12, 100, width/10, 0, Math.PI);
-  context.arc(width-width/12, 100, width/10, 0, Math.PI);
+  context.arc(width/6-width/12, 100, width/10, 0, Math.PI*2);
+  context.arc(width/3-width/12, 100, width/10, 0, Math.PI*2);
+  context.arc(width/2-width/12, 100, width/10, 0, Math.PI*2);
+  context.arc(width/6*4-width/12, 100, width/10, 0, Math.PI*2);
+  context.arc(width/6*5-width/12, 100, width/10, 0, Math.PI*2);
+  context.arc(width-width/12, 100, width/10, 0, Math.PI*2);
   context.fill();
   context.beginPath();
   context.fillStyle = "#DC1F26";
@@ -43,8 +45,36 @@ function drawHeader() {
   context.fill();
   context.beginPath();
   context.fillStyle = "#053447";
-  context.strokeStyle = "white"
   context.arc(width-width/12, height/2, width/30, 0, Math.PI*2);
-
   context.fill();
+  drawLines(width-width/12, height/2, width/30, "white");
+  context.beginPath();
+  context.fillStyle = "#F9F8F3";
+  context.strokeStyle = "black"
+  context.arc(width/6*5-width/7, height-height/5, width/30, 0, Math.PI*2);
+  context.fill();
+  drawLines(width/6*5-width/7, height-height/5, width/30, "black");
+}
+function drawLines(center_x, center_y, radius, color) {
+  drawLine(center_x, center_y, radius, 0, color);
+  drawLine(center_x, center_y, radius, 15, color);
+  drawLine(center_x, center_y, radius, 30, color);
+  drawLine(center_x, center_y, radius, 47, color);
+  drawLine(center_x, center_y, radius, 68, color);
+  drawLine(center_x, center_y, radius, -15, color);
+  drawLine(center_x, center_y, radius, -30, color);
+  drawLine(center_x, center_y, radius, -47, color);
+  drawLine(center_x, center_y, radius, -68, color);
+}
+function drawLine(center_x, center_y, radius, angle, color) {
+  var x = center_x + radius * Math.cos(-(35-angle)*Math.PI/180);
+  var y = center_y + radius * Math.sin(-(35-angle)*Math.PI/180);
+  var x2 = center_x + radius * Math.cos(-(angle-145)*Math.PI/180);
+  var y2 = center_y + radius * Math.sin(-(angle-145)*Math.PI/180);
+
+  context.beginPath();
+  context.strokeStyle = color;
+  context.moveTo(x, y);
+  context.lineTo(x2, y2);
+  context.stroke();
 }

@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <title>Home | Poutrel</title>
   <link rel="stylesheet" href="style.css">
-  <script src="functions.js"></script>
 </head>
-<body onload="drawHeader()">
+<body onload="drawMainPage()">
   <div class="header main">
-    <a href="#">partners</a>
-    <a href="#">about</a>
-    <img src="images/" alt="Poutrel logo">
+    <a href="#partners">partners</a>
+    <a href="#about">about</a>
+    <a>
+      <img src="images/" alt="Poutrel logo">
+    </a>
     <a href="map/">locations</a>
     <a href="jobs/">jobs</a>
     <div class="languages">
@@ -21,7 +22,9 @@
   <div class="wrapper">
     <div class="canvas">
       <canvas id="canvas1"></canvas>
+      <button onclick="location.href='jobs/'">Let's Grow!</button>
     </div>
   </div>
 </body>
+<script src="functions.js"></script>
 </html>
