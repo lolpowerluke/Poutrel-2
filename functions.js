@@ -9,6 +9,10 @@ function drawMainPage() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   context = canvas.getContext("2d");
+  context.shadowOffsetX = 4;
+  context.shadowOffsetY = 2;
+  context.shadowBlur = 5;
+  context.shadowColor = "rgba(0,0,0,0.5)";
 
   let width = context.canvas.width;
   let height = context.canvas.height;
