@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+:root {
+  --main-bg: #F9F8F3;
+}
+html,
+body {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+
+  font-family: "Outfit", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background-color: var(--main-bg);
+  height: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  text-align: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+
+  &.main {
+    align-items: end;
+  }
+  a {
+    position: relative;
+    width: fit-content;
+    justify-self: center;
+    transition: color .5s;
+    color: black;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: black;
+      bottom: 0;
+      left: 50%;
+      height: 2px;
+      width: 0;
+      transition: width .5s, left .5s;
+    }
+    &.active,
+    &:hover {
+      color: #F0A71E;
+
+      &::after {
+        width: 50%;
+        left: 25%;
+      }
+    }
+  }
+  .languages {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+
+    a {
+      &:hover {
+        color: #F0A71E;
+      }
+    }
+  }
+}
+.canvas {
+  display: flex;
+  position: relative;
+
+  #canvas1 {
+    height: 100vh;
+    width: 100vw;
+    line-height: 0;
+  }
+}
