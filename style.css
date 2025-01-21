@@ -211,10 +211,8 @@ header {
   box-sizing: border-box;
 
   .info {
-    width: 100%;
-    max-width: 500px;
-    height: 80%;
-    max-height: 500px;
+    width: 330px;
+    height: 500px;
     align-self: center;
     background-color: white;
     border: 1px solid black;
