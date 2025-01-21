@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Functie om decoratieve cirkels toe te voegen
   function createCircle(className, parentSelector, styles) {
     const circle = document.createElement('div');
-    circle.className = circle ${className};
+    circle.className = `circle ${className}`;
     Object.assign(circle.style, styles);
     document.querySelector(parentSelector).appendChild(circle);
   }
