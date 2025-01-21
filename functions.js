@@ -101,3 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   createCircle('yellow-large', '.section.join-us', { bottom: '-50px', left: '50%' });
 });
+
+let lastShownInfoName;
+
+function mapShowInfo(name) {
+  document.getElementById(name).style.display = "grid";
+  if (lastShownInfoName != undefined) {
+    document.getElementById(lastShownInfoName).style.display = "none";
+  }
+  lastShownInfoName = name;
+}
