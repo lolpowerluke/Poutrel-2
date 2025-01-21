@@ -2,23 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Home | Poutrel</title>
+  <title>Jobs | Poutrel</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <div class="header">
-    <a>partners</a>
-    <a>about</a>
-    <a href="../">
-      <img src="images/" alt="Poutrel logo">
-    </a>
-    <a href="../map/">locations</a>
-    <a href="../jobs/">jobs</a>
-    <div class="languages">
-      <a>FR</a>
-      <a>NL</a>
+  <header>
+    <input id="header-collapsible" class="toggle" type="checkbox">
+    <label for="header-collapsible" class="lbl-toggle">
+      <div class="l1 line"></div>
+      <div class="l2 line"></div>
+      <div class="l3 line"></div>
+    </label>
+    <div class="header other">
+      <a>partners</a>
+      <a href="../about/">about</a>
+      <a href="../" class="img">
+        <img src="../images/poutrel_logo.png" alt="Poutrel logo">
+      </a>
+      <a href="../map/">locations</a>
+      <a href="../jobs/">jobs</a>
+      <div class="languages">
+        <a>FR</a>
+        <a>NL</a>
+      </div>
     </div>
-  </div>
+  </header>
   <div>
     <canvas id="canvas1"></canvas>
   </div>
