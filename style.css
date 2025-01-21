@@ -22,6 +22,9 @@ body {
 a {
   cursor: pointer;
 }
+img {
+  width: 100%;
+}
 .header {
   background-color: var(--main-bg);
   height: 100px;
@@ -35,9 +38,9 @@ a {
   z-index: 1;
 
   &.main {
-    align-items: end;
+    align-items: center;
   }
-  a {
+  a:not(.img) {
     position: relative;
     width: fit-content;
     justify-self: center;
@@ -57,7 +60,7 @@ a {
     }
     &.active,
     &:hover {
-      color: #F0A71E;
+      color: #DC1F26;
 
       &::after {
         width: 50%;
@@ -76,10 +79,14 @@ a {
       }
     }
   }
+  img {
+    margin-top: 40px;
+  }
 }
-.canvas {
+.canvasMain1 {
   display: flex;
   position: relative;
+  background: url(images/_MG_9667.jpg) center / cover no-repeat;
 
   #canvas1 {
     height: 100vh;
