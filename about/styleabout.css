@@ -1,0 +1,209 @@
+/* Algemene stijl */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f8f3;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 20px;
+}
+
+.menu-icon img {
+  width: 40px;
+}
+
+main {
+  padding: 20px;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.section.what-is-poutrel .content,
+.section.mission .content {
+  max-width: 50%;
+}
+
+.section.what-is-poutrel .image img,
+.section.mission .image img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.section h1,
+.section h2 {
+  color: #cc0000;
+  margin-bottom: 20px;
+}
+
+.section ul,
+.section ol {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.section p {
+  margin-bottom: 15px;
+}
+
+/* CTA-stijl */
+.cta {
+  background-color: #cc0000;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Section Styling */
+.logos-section {
+  width: 100%;
+  height: 100%; /* Make the entire section fit within the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute content vertically */
+  align-items: center;
+  position: relative;
+  background-color: #f7f7f7;
+}
+
+/* Yellow Circle Styling */
+.yellow-circle {
+  background-color: #ffc300; /* Match the yellow */
+  color: #000; /* Black text */
+  text-align: center;
+  padding: 40px 20px; /* Adjust spacing */
+  border-radius: 50%; /* Make it a circle */
+  width: 200px; /* Circle dimensions */
+  height: 200px;
+  margin-top: 20px; /* Space at the top */
+  z-index: 2; /* Ensure it sits above the footer background */
+}
+
+.yellow-circle h2 {
+  font-size: 1.2rem; /* Adjust font size */
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Footer Container */
+.footer-container {
+  position: relative;
+  width: 100%;
+  height: 40%; /* Footer takes up 40% of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer Background */
+.footer-background img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height of the footer */
+  object-fit: cover; /* Keep the image proportional while covering the area */
+  filter: blur(5px) brightness(0.7); /* Apply blur and darken */
+  z-index: 1; /* Sit below the logos */
+}
+
+/* Logos on Footer */
+.logos {
+  position: relative;
+  z-index: 2; /* Sit above the background image */
+  display: flex;
+  gap: 50px; /* Space between logos */
+}
+
+.logos img {
+  width: 120px; /* Adjust logo size */
+  height: auto;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .yellow-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .logos img {
+    width: 100px;
+  }
+}
+
+/* Decoratieve cirkels */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.section.what-is-poutrel .circle:first-child {
+  background-color: #f0a71e;
+  width: 150px;
+  height: 150px;
+  top: -50px;
+  left: 10%;
+}
+
+.section.what-is-poutrel .circle:last-child {
+  background-color: #cc0000;
+  width: 100px;
+  height: 100px;
+  bottom: -30px;
+  right: 10%;
+}
+
+.section.mission .circle:first-child {
+  background-color: #cc0000;
+  width: 150px;
+  height: 150px;
+  top: -50px;
+  right: 10%;
+}
+
+.section.mission .circle:last-child {
+  background-color: #f0a71e;
+  width: 100px;
+  height: 100px;
+  bottom: -30px;
+  left: 10%;
+}
+
+.section.join-us .circle {
+  background-color: #f0a71e;
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
