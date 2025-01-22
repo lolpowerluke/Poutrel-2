@@ -5,8 +5,9 @@
   <title>Jobs | Poutrel</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="icon" type="image/x-icon" href="../images/favicon.svg">
+  <script src="../functions.js"></script>
 </head>
-<body class="tk-tenon" onresize="">
+<body class="tk-tenon" onload="drawJobs()" onresize="drawJobs()">
   <header>
     <input id="header-collapsible" class="toggle" type="checkbox">
     <label for="header-collapsible" class="lbl-toggle">
@@ -28,10 +29,21 @@
       </div>
     </div>
   </header>
-  <div>
+  <main class="wrapper jobs">
     <div class="canvasJobs1">
       <canvas id="canvas1"></canvas>
     </div>
-  </div>
+    <div class="vacancies">
+      <h1>Vacatures</h1>
+      <div class="list">
+        <div class="vacancy"></div>
+      </div>
+      <h2>Geen open vacatures gevonden,</h2>
+      <h2>kom later nog eens terug.</h2>
+    </div>
+    <div class="canvasJobs2">
+      <canvas id="canvas2"></canvas>
+    </div>
+  </main>
 </body>
 </html>

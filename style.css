@@ -26,6 +26,9 @@ body {
   flex-direction: column;
   overflow: hidden;
 }
+main {
+  height: 100vh;
+}
 a {
   cursor: pointer;
 }
@@ -267,7 +270,7 @@ canvas {
 
         .head,
         .body {
-          background-color: #81566C;
+          background-color: #400026;
         }
       }
       &.cosmos {
@@ -276,7 +279,7 @@ canvas {
 
         .head,
         .body {
-          background-color: #81566C;
+          background-color: #400026;
         }
       }
       &.anker {
@@ -285,7 +288,7 @@ canvas {
 
         .head,
         .body {
-          background-color: #AECB59;
+          background-color: #A4CD39;
         }
       }
       &.miro {
@@ -294,7 +297,7 @@ canvas {
 
         .head,
         .body {
-          background-color: #5BA5CC;
+          background-color: #659ABF;
         }
       }
       &.harmonie {
@@ -303,7 +306,7 @@ canvas {
 
         .head,
         .body {
-          background-color: #D49882;
+          background-color: #E96642;
         }
       }
       &.forum {
@@ -312,7 +315,7 @@ canvas {
 
         .head,
         .body {
-          background-color: #EEA540;
+          background-color: #F8981D;
         }
       }
       &.vives {
@@ -321,7 +324,7 @@ canvas {
 
         .head,
         .body {
-          background-color: #231F20;
+          background-color: #000000;
         }
       }
       &.bricoteam {
@@ -330,7 +333,7 @@ canvas {
 
         .head,
         .body {
-          background-color: #EB583F;
+          background-color: #FF0000;
         }
       }
     }
@@ -398,49 +401,49 @@ canvas {
   #luca {
     .head,
     .body {
-      background-color: #81566C;
+      background-color: #400026;
     }
   }
   #cosmos {
     .head,
     .body {
-      background-color: #81566C;
+      background-color: #400026;
     }
   }
   #anker {
     .head,
     .body {
-      background-color: #AECB59;
+      background-color: #A4CD38;
     }
   }
   #miro {
     .head,
     .body {
-      background-color: #5BA5CC;
+      background-color: #A4CD39;
     }
   }
   #harmonie {
     .head,
     .body {
-      background-color: #D49882;
+      background-color: #E96642;
     }
   }
   #forum {
     .head,
     .body {
-      background-color: #EEA540;
+      background-color: #F8981D;
     }
   }
   #vives {
     .head,
     .body {
-      background-color: #231F20;
+      background-color: #000000;
     }
   }
   #bricoteam {
     .head,
     .body {
-      background-color: #EB583F;
+      background-color: #FF0000;
     }
   }
 }
@@ -463,5 +466,18 @@ canvas {
   h2 {
     z-index: 5;
     position: relative;
+  }
+}
+.jobs {
+  overflow: hidden scroll;
+
+  .canvasJobs1 {
+    background-color: green;
+    display: flex;
+  }
+  .vacancies {
+    .list:not(:empty) ~ h2 {
+      display: none;
+    }
   }
 }
