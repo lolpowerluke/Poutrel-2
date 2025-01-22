@@ -60,6 +60,7 @@ function drawMainPage() {
   context.fill();
   drawLines(width/6*5-width/7, height-height/5, width/30, "black");
 }
+
 function drawLines(center_x, center_y, radius, color) {
   drawLine(center_x, center_y, radius, 0, color);
   drawLine(center_x, center_y, radius, 15, color);
@@ -71,6 +72,7 @@ function drawLines(center_x, center_y, radius, color) {
   drawLine(center_x, center_y, radius, -47, color);
   drawLine(center_x, center_y, radius, -68, color);
 }
+
 function drawLine(center_x, center_y, radius, angle, color) {
   var x = center_x + radius * Math.cos(-(35-angle)*Math.PI/180);
   var y = center_y + radius * Math.sin(-(35-angle)*Math.PI/180);
@@ -201,7 +203,7 @@ function drawJobsCanvas1() {
   ]
 
   for (let i = 0; i < pointsArray.length-1; i++) {
-  let diffX = pointsArray[i].p1.x - pointsArray[i].center.x;
+    let diffX = pointsArray[i].p1.x - pointsArray[i].center.x;
     let diffY = pointsArray[i].p1.y - pointsArray[i].center.y;
     let radius = Math.abs(Math.sqrt(diffX*diffX + diffY*diffY));
     let startAngle = Math.atan2(diffY, diffX);
@@ -218,16 +220,16 @@ function drawJobsCanvas1() {
   }
 
   context.fillStyle = "#F9F8F3";
-    for (let j = 0; j < pointsArray.length-1; j++) {
-      let diffX = pointsArray[j].p1.x - pointsArray[j].center.x;
-      let diffY = pointsArray[j].p1.y - pointsArray[j].center.y;
-      let radius = Math.abs(Math.sqrt(diffX*diffX + diffY*diffY));
+  for (let j = 0; j < pointsArray.length-1; j++) {
+    let diffX = pointsArray[j].p1.x - pointsArray[j].center.x;
+    let diffY = pointsArray[j].p1.y - pointsArray[j].center.y;
+    let radius = Math.abs(Math.sqrt(diffX*diffX + diffY*diffY));
 
-      context.beginPath();
-      context.arc(pointsArray[j].center.x, pointsArray[j].center.y, radius, 0, Math.PI*2, false);
-      context.rect(pointsArray[j].center.x-radius, pointsArray[j].center.y, radius*2, height)
-      context.fill();
-    }
+    context.beginPath();
+    context.arc(pointsArray[j].center.x, pointsArray[j].center.y, radius, 0, Math.PI*2, false);
+    context.rect(pointsArray[j].center.x-radius, pointsArray[j].center.y, radius*2, height)
+    context.fill();
+  }
 
   for (let i = 0; i < pointsArray.length-1; i++) {
     let diffX = pointsArray[i].p1.x - pointsArray[i].center.x;
