@@ -19,6 +19,10 @@ main {
   align-items: center;
   margin-bottom: 60px;
   position: relative;
+
+  & > * {
+    z-index: 1;
+  }
 }
 
 .section.what-is-poutrel .content,
@@ -151,7 +155,7 @@ body, html {
 .circle {
   position: absolute;
   border-radius: 50%;
-  z-index: -1;
+  z-index: 0;
 }
 
 .section.what-is-poutrel .circle:first-child {

@@ -3,8 +3,6 @@ let context;
 
 let canvas = document.getElementById("canvas1");
 
-window.onresize = drawMainPage;
-
 function drawMainPage() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -83,15 +81,7 @@ function drawLine(center_x, center_y, radius, angle, color) {
   context.stroke();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Functie om decoratieve cirkels toe te voegen
-  function createCircle(className, parentSelector, styles) {
-    const circle = document.createElement('div');
-    circle.className = `circle ${className}`;
-    Object.assign(circle.style, styles);
-    document.querySelector(parentSelector).appendChild(circle);
-  }
-
+function drawAbout() {
   // Voeg cirkels toe aan de juiste secties
   createCircle('yellow', '.section.what-is-poutrel', { top: '-50px', left: '10%' });
   createCircle('red', '.section.what-is-poutrel', { bottom: '-30px', right: '10%' });
@@ -100,7 +90,15 @@ document.addEventListener('DOMContentLoaded', () => {
   createCircle('yellow', '.section.mission', { bottom: '-30px', left: '10%' });
 
   createCircle('yellow-large', '.section.join-us', { bottom: '-50px', left: '50%' });
-});
+}
+
+function createCircle(className, parentSelector, styles) {
+  const circle = document.createElement('div');
+  circle.className = `circle ${className}`;
+  Object.assign(circle.style, styles);
+  console.log(parentSelector)
+  document.querySelector(parentSelector).appendChild(circle);
+}
 
 let lastShownInfoName;
 
