@@ -531,8 +531,11 @@ canvas {
 .jobs {
   overflow: hidden scroll;
 
-  .canvasJobs1 {
+  .imageJobs1 {
     display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
 
     svg {
       width: 100vw;
@@ -544,11 +547,9 @@ canvas {
     position: relative;
 
     h1 {
-      position: absolute;
-      top: -25vw;
-      left: 10vw;
       font-size: 6vw;
       z-index: 1;
+      position: relative;
 
       &::after {
         content: "";
