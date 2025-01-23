@@ -113,6 +113,10 @@ header {
     transform: translateX(-100%);
     transition: transform .5s;
 
+    a {
+      font-size: 1.5rem;
+    }
+
     & > * {
       order: 2;
     }
@@ -130,7 +134,7 @@ header {
   }
   .header.main {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    grid-template-columns: 2fr 2fr 3fr 2fr 2fr;
     align-items: center;
     height: 100px;
     width: 100vw;
@@ -148,6 +152,7 @@ header {
     transition: color .5s;
     color: black;
     text-decoration: none;
+    font-size: 1.6vw;
 
     &::after {
       content: "";
@@ -188,20 +193,75 @@ canvas {
 .canvasMain1 {
   display: flex;
   position: relative;
-  background: url(images/_MG_9667.jpg) center / cover no-repeat;
+  background-image: url(images/_MG_9667.jpg);
+  background-position: 0 110px;
+  background-size: cover;
+  background-repeat: no-repeat;
   
-  button {
+  div {
     position: absolute;
-    bottom: 15%;
-    left: 70%;
-    padding: 10px 60px;
-    border-radius: 15px;
-    outline: unset;
-    border: unset;
-    background-color: red;
-    color: white;
-    font-weight: 600;
-    font-size: 2vw;
+    bottom: 25%;
+    right: 10%;
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    align-items: end;
+
+    span {
+      font-size: 3vw;
+      font-family: coconat;
+      color: white;
+      text-shadow: 5px 10px 10px black;
+      z-index: 1;
+      position: relative;
+    }
+    span:first-of-type::before,
+    span:first-of-type::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      z-index: -1;
+      aspect-ratio: 1/1;
+    }
+    span:first-of-type::after {
+      width: 5vw;
+      top: -1vw;
+      background-color: #2C463F;
+      left: -2vw;
+    }
+    span:first-of-type::before {
+      width: 2vw;
+      top: -2.5vw;
+      background-color: orange;
+      left: 2.5vw;
+    }
+    button {
+      padding: 10px 50px;
+      border-radius: 15px;
+      outline: unset;
+      border: unset;
+      background-color: red;
+      color: white;
+      font-weight: 400;
+      font-size: 2vw;
+      width: fit-content;
+      margin-top: 10px;
+      z-index: 1;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        aspect-ratio: 1/1;
+      }
+      &::after {
+        width: 2vw;
+        top: -1vw;
+        background-color: #053447;
+        right: -1vw;
+      }
+    }
   }
 }
 .map {
@@ -474,10 +534,91 @@ canvas {
   .canvasJobs1 {
     background-color: green;
     display: flex;
+
+    svg {
+      width: 100vw;
+      height: 75vw;
+    }
   }
   .vacancies {
-    .list:not(:empty) ~ h2 {
+    padding: 0 50px;
+    position: relative;
+
+    h1 {
+      position: absolute;
+      top: -25vw;
+      left: 10vw;
+      font-size: 6vw;
+      z-index: 1;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 10vw;
+        height: 10vw;
+        background-color: red;
+        top: -1.5vw;
+        left: -3.5vw;
+        border-radius: 50%;
+        z-index: -1;
+      }
+    }
+    .list:not(.empty) ~ h2 {
       display: none;
+    }
+    .list {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+
+      .vacancy {
+        width: 330px;
+        height: 500px;
+        border-radius: 50px;
+        padding: 25px;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        font-size: 1rem;
+        gap: 15px;
+        box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.7);
+
+        h2 {
+          font-size: 1.2rem;
+          text-align: center;
+        }
+        .company {
+          text-align: center;
+        }
+        .linkToWebpage {
+          text-decoration: none;
+          color: black;
+          border: 1px solid black;
+          padding: 10px 50px 10px 30px;
+          border-radius: 50px;
+          position: relative;
+          box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.7);
+          transition: box-shadow .5s, background-color .5s, border-color .5s;
+      
+          &:hover {
+            box-shadow: unset;
+            border-color: transparent;
+            background-color: #F0A71E;
+          }
+          &::after {
+            content: ">";
+            position: absolute;
+            right: 15px;
+            top: -2px;
+            font-size: 40px;
+            font-weight: 100;
+          }
+        }
+      }
     }
   }
 }
