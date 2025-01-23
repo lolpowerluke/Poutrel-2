@@ -532,7 +532,6 @@ canvas {
   overflow: hidden scroll;
 
   .canvasJobs1 {
-    background-color: green;
     display: flex;
 
     svg {

@@ -3,42 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Poutrel</title>
+  <title>Poutrel</title>
   <link rel="stylesheet" href="styleabout.css">
-  <link rel="stylesheet" href="../style.css">
-  <script src="../functions.js"></script>
-  <link rel="icon" type="image/x-icon" href="../images/favicon.svg">
 </head>
-<body class="tk-tenon" onload="drawAbout()">
+<body>
+  <!-- Navigatie Header -->
   <header>
-    <input id="header-collapsible" class="toggle" type="checkbox">
-    <label for="header-collapsible" class="lbl-toggle">
-      <div class="l1 line"></div>
-      <div class="l2 line"></div>
-      <div class="l3 line"></div>
+    <!-- Checkbox voor het menu toggle -->
+    <input type="checkbox" class="toggle" id="menu-toggle">
+
+    <!-- Label voor hamburger menu -->
+    <label class="lbl-toggle" for="menu-toggle">
+      <span class="line l1"></span>
+      <span class="line l2"></span>
+      <span class="line l3"></span>
     </label>
-    <div class="header other">
-      <a>partners</a>
-      <a href="../about/">about</a>
-      <a href="../" class="img">
-        <img src="../images/poutrel_logo.png" alt="Poutrel logo">
+
+    <!-- Hoofdmenu (desktop navigatie) -->
+    <div class="header main">
+      <a href="#partners">Partners</a>
+      <a href="about/">About</a>
+      <a class="img">
+        <img src="/images/poutrel_logo.png" alt="Poutrel logo">
       </a>
-      <a href="../map/">locations</a>
-      <a href="../jobs/">jobs</a>
+      <a href="map/">Locaties</a>
+      <a href="jobs/">Jobs</a>
       <div class="languages">
-        <a>FR</a>
-        <a>NL</a>
+        <a href="#fr">FR</a>
+        <a href="#nl">NL</a>
       </div>
     </div>
+
+    
   </header>
 
-
+  <!-- Hoofdinhoud -->
   <main>
     <!-- Wat is Poutrel -->
     <section class="section what-is-poutrel">
-        <div class="image">
-            <img src="img/linksboven.png" alt="Person Smiling">
-          </div>
+      <div class="image">
+        <img src="/images/linksboven.png" alt="Person Smiling">
+      </div>
+      <div class="white-circle">
+      </div>
+      <div class="white-circle2">
+      </div>
       <div class="content">
         <h1>Wat is Poutrel?</h1>
         <p>POUTREL is een overkoepelende vakbond die 4 sociale organisaties in Brussel huisvest:</p>
@@ -50,9 +59,8 @@
         </ul>
         <p>Deze 4 organisaties omvatten op hun beurt 6 verschillende buurtactiviteiten, verspreid over 8 locaties in Brussel.</p>
       </div>
-
     </section>
-<!-- Missie -->
+    <!-- Missie -->
     <section class="section mission">
       <div class="content">
         <h2>Wat is De missie van POUTREL?</h2>
@@ -64,31 +72,36 @@
         <p>POUTREL realiseert zijn missie via zijn 6 buurtprojecten in Brussel Stad, Vorst en Anderlecht.</p>
       </div>
       <div class="image">
-        <img src="img/rechtsbeneden.png" alt="Elderly Woman">
+        <img src="/images/rechtsbeneden.png" alt="Elderly Woman">
       </div>
     </section>
-
+    <!-- Promo Video -->
+    <section class="promo-video-section">
+      <h2>Promo Video</h2>
+      <div class="video-container">
+        <video id="promoVideo" controls autoplay>
+          <source src="promo.mp4" type="video/mp4">
+          Je browser ondersteunt geen video-element.
+        </video>
+      </div>
+    </section>
+    <!-- Logos en footer -->
     <section class="logos-section">
-        <!-- Yellow Circle Section -->
-        <div class="yellow-circle">
-          <h2>Wij zijn een team!<br>Neem contact met ons op</h2>
+      <div class="yellow-circle">
+        <h2>Wij zijn een team!<br>Neem contact met ons op</h2>
+      </div>
+      <div class="footer-container">
+        <div class="logos">
+          <img src="/images/brico.png" alt="Brico Logo">
+          <img src="/images/anker.png" alt="Anker Logo">
+          <img src="/images/cosmos.png" alt="Cosmos Logo">
         </div>
-
-        <!-- Footer Background with Logos -->
-        <div class="footer-container">
-          <div class="logos">
-            <img src="img/brico.png" alt="Brico Logo">
-            <img src="img/anker.png" alt="Anker Logo">
-            <img src="img/cosmos.png" alt="Cosmos Logo">
-          </div>
-          <div class="footer-background">
-            <img src="img/footer.png" alt="Footer Background">
-          </div>
+        <div class="footer-background">
+          <img src="/images/footer.png" alt="Footer Background">
         </div>
-      </section>
-
-
-
+      </div>
+    </section>
   </main>
+  <script src="functions.js"></script>
 </body>
 </html>

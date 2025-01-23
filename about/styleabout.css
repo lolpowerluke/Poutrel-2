@@ -5,13 +5,23 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f8f3;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .menu-icon img {
   width: 40px;
 }
 
-main {
-  padding: 20px;
-}
+
 
 .section {
   display: flex;
@@ -19,22 +29,20 @@ main {
   align-items: center;
   margin-bottom: 60px;
   position: relative;
-
-  & > * {
-    z-index: 1;
-  }
 }
 
 .section.what-is-poutrel .content,
 .section.mission .content {
   max-width: 50%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .section.what-is-poutrel .image img,
 .section.mission .image img {
   width: 400px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 .section h1,
@@ -73,29 +81,28 @@ body, html {
   flex-direction: column;
 }
 
-/* Section Styling */
 .logos-section {
   width: 100%;
-  height: 100%; /* Make the entire section fit within the viewport */
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribute content vertically */
   align-items: center;
-  position: relative;
   background-color: #f7f7f7;
+  margin: 0; /* Verwijdert standaard marges */
+  padding: 0; /* Verwijdert standaard padding */
 }
 
 /* Yellow Circle Styling */
 .yellow-circle {
-  background-color: #ffc300; /* Match the yellow */
-  color: #000; /* Black text */
+  background-color: #ffc300; /* Gele kleur */
+  color: #000; /* Zwarte tekst */
   text-align: center;
-  padding: 40px 20px; /* Adjust spacing */
-  border-radius: 50%; /* Make it a circle */
-  width: 200px; /* Circle dimensions */
+  padding: 40px 20px; /* Spacing binnenin de cirkel */
+  border-radius: 50%; /* Maakt het een cirkel */
+  width: 200px; /* Afmetingen */
   height: 200px;
-  margin-top: 20px; /* Space at the top */
-  z-index: 2; /* Ensure it sits above the footer background */
+  margin-top: 20px; /* Ruimte boven de cirkel */
+  margin-bottom: 0; /* Verwijder onnodige ruimte onder de cirkel */
+  z-index: 2; /* Zorgt dat het boven de achtergrond staat */
 }
 
 .yellow-circle h2 {
@@ -104,40 +111,101 @@ body, html {
   margin: 0;
 }
 
-/* Footer Container */
+.white-circle {
+  background-color: #f9f8f3; /* Gele kleur */
+  color: #000; /* Zwarte tekst */
+  text-align: center;
+  padding: 40px 20px; /* Spacing binnenin de cirkel */
+  border-radius: 50%; /* Maakt het een cirkel */
+  width: 200px; /* Afmetingen */
+  height: 170px;
+  margin-top: 20px; /* Ruimte boven de cirkel */
+  margin-bottom: -230px; /* Verwijder onnodige ruimte onder de cirkel */
+  margin-left: -350px; /* Cirkel naar links verplaatsen */
+  z-index: 2; /* Zorgt dat het boven de achtergrond staat */
+}
+.white-circle2 {
+  background-color: #f9f8f3; /* Gele kleur */
+  color: #000; /* Zwarte tekst */
+  text-align: center;
+  padding: 40px 20px; /* Spacing binnenin de cirkel */
+  border-radius: 50%; /* Maakt het een cirkel */
+  width: 200px; /* Afmetingen */
+  height: 170px;
+  margin-top: 20px; /* Ruimte boven de cirkel */
+  margin-bottom: -100px; /* Verwijder onnodige ruimte onder de cirkel */
+  margin-left: -200px; /* Cirkel naar links verplaatsen */
+  z-index: 2; /* Zorgt dat het boven de achtergrond staat */
+}
+
+
 .footer-container {
   position: relative;
   width: 100%;
-  height: 40%; /* Footer takes up 40% of the viewport */
+  height: 200px; /* Hoogte van de footer-afbeelding */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0; /* Verwijdert extra ruimte boven de footer */
+  padding: 0; /* Geen padding */
 }
 
-/* Footer Background */
+
 .footer-background img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height of the footer */
-  object-fit: cover; /* Keep the image proportional while covering the area */
-  filter: blur(5px) brightness(0.7); /* Apply blur and darken */
-  z-index: 1; /* Sit below the logos */
+  width: 100%;
+  height: 100%;
+  object-fit:fill; /* Zorgt dat de afbeelding goed past */
+  z-index: 1; /* Achtergrondpositie */
+  filter: blur(2px);
 }
 
-/* Logos on Footer */
 .logos {
   position: relative;
-  z-index: 2; /* Sit above the background image */
+  z-index: 2; /* Makes sure logos stay above the background */
   display: flex;
-  gap: 50px; /* Space between logos */
+  gap: 50px;
 }
 
 .logos img {
-  width: 120px; /* Adjust logo size */
+  width: 120px;
   height: auto;
 }
+/* Navigatie header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: var(--main-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header input {
+  display: none;
+}
+
+/* Hamburger menu */
+.lbl-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.lbl-toggle .line {
+  width: 30px;
+  height: 2px;
+  background-color: black;
+  margin: 5px 0;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
@@ -149,13 +217,67 @@ body, html {
   .logos img {
     width: 100px;
   }
+
+  .lbl-toggle {
+    display: block;
+  }
+
+  .header.main {
+    display: none;
+  }
+
+  .header.other {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: var(--main-bg);
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+    padding: 20px;
+  }
+
+  .toggle:checked + .lbl-toggle + .header.other {
+    transform: translateX(0);
+  }
+}
+
+/* Desktop menu */
+.header.main {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header.main img {
+  max-height: 50px;
+}
+
+.header.main a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+.header.main a:hover {
+  color: #cc0000;
+}
+
+/* Zorg dat de body onder de header begint */
+body {
+  padding-top: 100px;
+
 }
 
 /* Decoratieve cirkels */
 .circle {
   position: absolute;
   border-radius: 50%;
-  z-index: 0;
+  z-index: -1;
 }
 
 .section.what-is-poutrel .circle:first-child {
@@ -197,4 +319,30 @@ body, html {
   bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.promo-video-section {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.promo-video-section h2 {
+  font-size: 1.8rem;
+  color: #cc0000;
+  margin-bottom: 20px;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 2px solid #cc0000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
 }
