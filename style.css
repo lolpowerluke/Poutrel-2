@@ -586,6 +586,7 @@ canvas {
         font-size: 1rem;
         gap: 15px;
         box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.7);
+        background-color: white;
 
         h2 {
           font-size: 1.2rem;
