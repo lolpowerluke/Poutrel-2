@@ -1,0 +1,196 @@
+
+.jobs {
+  margin: 2vw auto 0;
+
+  .imageJobs2,
+  .imageJobs1 {
+    width: 100vw;
+  }
+  .imageJobs2 {
+    margin-top: -10vw;
+    position: relative;
+    z-index: 0;
+
+    div {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        color: white;
+        background-color: #DC1F26;
+        padding: 1vw 5vw 1vw 3vw;
+        border-radius: 50px;
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        border: 1px solid transparent;
+        transition: background-color .5s, border-color .5s, color .5s;
+        margin-top: 20vw;
+        font-size: 1.3vw;
+    
+        &::after {
+          content: "";
+          display: block;
+          width: 1vw;
+          height: 1vw;
+          font-size: 2.4vw;
+          line-height: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 12px;
+          position: absolute;
+          font-weight: 200;
+          background-image: url(../images/about/arrow.png);
+          background-size: contain;
+          filter: invert(1);
+          transition: filter .5s;
+        }
+        &:hover {
+          border-color: black;
+          background-color: var(--main-bg);
+          color: black;
+        }
+        &:hover::after {
+          filter: invert(0);
+        }
+      }
+    }
+  }
+  .imageJobs1 {
+    margin-top: 100px;
+    position: absolute;
+    top: 0;
+  }
+  .vacancies {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 2000px;
+    margin: 0 auto;
+    z-index: 1;
+
+    h1 {
+      font-size: 60px;
+      z-index: 1;
+      position: relative;
+      margin-left: 30px;
+      margin-bottom: 10vw;
+      text-shadow: 0 0 2px white;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: #DC1F26;
+        top: -20px;
+        left: -30px;
+        border-radius: 50%;
+        z-index: -1;
+      }
+    }
+    .list:not(.empty) ~ h2 {
+      display: none;
+    }
+    .list {
+      width: 100%;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+      justify-content: center;
+      gap: 50px 150px;
+
+      .vacancy {
+        aspect-ratio: 3/4;
+        border-radius: 50px;
+        padding: 3vw;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        font-size: 1.5rem;
+        gap: 25px;
+        box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.7);
+        background-color: white;
+        overflow: hidden;
+
+        h3 {
+          margin: 0;
+        }
+        .stage {
+          color: orange;
+        }
+        .vacancy-job {
+          color: lightblue;
+        }
+        .volonteer {
+          color: green;
+        }
+        .other {
+          color: red;
+        }
+        .description {
+          align-self: flex-end;
+          margin-bottom: 15px;
+          font-weight: lighter;
+        }
+        .company {
+          font-weight: normal;
+        }
+        h2 {
+          font-size:3rem;
+          width: 100%;
+          overflow: hidden;
+          word-wrap: normal;
+          font-family: coconat;
+        }
+        .linkToWebpage {
+          text-decoration: none;
+          color: black;
+          border: 1px solid black;
+          padding: 0.8vw 4vw 0.8vw 2vw;
+          border-radius: 50px;
+          position: relative;
+          box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.7);
+          transition: box-shadow .5s, background-color .5s, border-color .5s;
+      
+          &:hover {
+            box-shadow: unset;
+            border-color: transparent;
+            background-color: #F0A71E;
+          }
+          &::after {
+            content: "";
+            display: block;
+            width: 1vw;
+            height: 1vw;
+            font-size: 2.4vw;
+            line-height: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 12px;
+            position: absolute;
+            font-weight: 200;
+            background-image: url(../images/about/arrow.png);
+            background-size: contain;
+            transition: filter .5s;
+          }
+        }
+      }
+    }
+    @media (max-width: 1050px) {
+      .list {
+        .vacancy {
+          aspect-ratio: 4/2;
+        }
+      }
+    }
+  }
+}

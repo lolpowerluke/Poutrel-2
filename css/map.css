@@ -1,0 +1,346 @@
+.no-scroll {
+  header {
+    height: 0;
+  }
+}
+.map {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding-top: 110px;
+  box-sizing: border-box;
+
+  .info {
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    padding: 7vw 4vw 0 5vw;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    flex: 1 1 auto;
+
+    .infospanmap {
+      font-size: 3vw;
+      text-align: center;
+      padding: 0 50px;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    h2 {
+      font-size: 2.6vw;
+    }
+  }
+  .houses.grid {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 auto;
+
+    img {
+      display: block;
+      height: 100%;
+      width: unset;
+    }
+    & > div {
+      display: grid;
+      grid-template-columns: repeat(24, 1fr);
+      grid-template-rows: repeat(12, 1fr);
+      align-items: center;
+      position: absolute;
+      inset: 0;
+      
+      .house {
+        all: unset;
+        justify-self: center;
+        cursor: pointer;
+        transition: transform .5s;
+
+        &:hover {
+          transform: scale(1.25);
+        }
+        .head {
+          width: 1.6vw;
+          height: 1.6vw;
+          border-radius: 50%;
+          background-color: grey;
+        }
+        .body {
+          width: 1.6vw;
+          height: 2vw;
+          border-radius: 10vw 10vw 0 0;
+          background-color: grey;
+          margin-top: -0.2vw;
+        }
+        &.luca{
+          grid-column: 19/20;
+          grid-row: 6/7;
+
+          &:hover {
+            .head,
+            .body {
+              background-color: #400026;
+            }
+          }
+        }
+        &.cosmos {
+          grid-column: 12/13;
+          grid-row: 9/10;
+
+          &:hover {
+            .head,
+            .body {
+              background-color: #400026;
+            }
+          }
+        }
+        &.anker  {
+          grid-column: 15/16;
+          grid-row: 7/8;
+
+          &:hover {
+            .head,
+            .body {
+              background-color: #A4CD39;
+            }
+          }
+        }
+        &.miro  {
+          grid-column: 13/14;
+          grid-row: 10/11;
+
+          &:hover {
+            .head,
+            .body {
+              background-color: #659ABF;
+            }
+          }
+        }
+        &.harmonie  {
+          grid-column: 17/18;
+          grid-row: 6/7;
+
+          &:hover {
+            .head,
+            .body {
+              background-color: #E96642;
+            }
+          }
+        }
+        &.forum  {
+          grid-column: 14/15;
+          grid-row: 8/9;
+
+          &:hover {
+            .head,
+            .body {
+              background-color: #F8981D;
+            }
+          }
+        }
+        &.vives  {
+          grid-column: 5/6;
+          grid-row: 11/12;
+
+          &:hover {
+            .head,
+            .body {
+              background-color: #000000;
+            }
+          }
+        }
+        &.bricoteam  {
+          grid-column: 18/19;
+          grid-row: 6/7;
+
+          &:hover {
+            .head,
+            .body {
+              background-color: #FF0000;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.info {
+  .infoCard[style*="flex"] ~ .infospanmap {
+    display: none;
+  }
+  .infoCard {
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    height: fit-content;
+    width: 100%;
+    max-width: 600px;
+    padding: 2vw;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden scroll;
+    font-size: 1.5vw;
+
+    & > * {
+      flex: 0 0 auto;
+      height: fit-content;
+    }
+    h2 + div {
+      margin-top: 2vw;
+    }
+    .building-img {
+      position: relative;
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+
+      img {
+        display: block;
+        height: fit-content;
+      }
+      .person {
+        position: absolute;
+        bottom: -2vw;
+        right: -1vw;
+        
+        .head {
+          width: 4.5vw;
+          height: 4.5vw;
+          border-radius: 50%;
+          background-color: red;
+        }
+        .body {
+          width: 5vw;
+          height: 5vw;
+          margin-left: -0.3333vw;
+          border-radius: 100vw 100vw 0 0;
+          background-color: red;
+          margin-top: -1vw;
+        }
+      }
+    }
+    .linkToWebpage {
+      text-decoration: none;
+      color: white;
+      background-color: #DC1F26;
+      padding: 0.7vw 4.5vw 0.7vw 2.5vw;
+      border-radius: 50px;
+      position: relative;
+      width: fit-content;
+      border: 1px solid transparent;
+      transition: background-color .5s, border-color .5s, color .5s;
+  
+      &::after {
+        content: "";
+        display: block;
+        width: 1vw;
+        height: 1vw;
+        font-size: 2.4vw;
+        line-height: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 12px;
+        position: absolute;
+        font-weight: 200;
+        background-image: url(../images/about/arrow.png);
+        background-size: contain;
+        filter: invert(1);
+        transition: filter .5s;
+      }
+      &:hover {
+        border-color: black;
+        background-color: var(--main-bg);
+        color: black;
+      }
+      &:hover::after {
+        filter: invert(0);
+      }
+    }
+    .otherInfo {
+      display: flex;
+      flex-direction: column;
+    }
+    .adress {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  #luca {
+    .head,
+    .body {
+      background-color: #400026;
+    }
+  }
+  #cosmos {
+    .head,
+    .body {
+      background-color: #400026;
+    }
+  }
+  #anker {
+    .head,
+    .body {
+      background-color: #A4CD38;
+    }
+  }
+  #miro {
+    .head,
+    .body {
+      background-color: #A4CD39;
+    }
+  }
+  #harmonie {
+    .head,
+    .body {
+      background-color: #E96642;
+    }
+  }
+  #forum {
+    .head,
+    .body {
+      background-color: #F8981D;
+    }
+  }
+  #vives {
+    .head,
+    .body {
+      background-color: #000000;
+    }
+  }
+  #bricoteam {
+    .head,
+    .body {
+      background-color: #FF0000;
+    }
+  }
+}
+.title {
+  position: absolute;
+  top: 3vw;
+  left: 5vw;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -1vw;
+    left: -2vw;
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background-color: #F0A71E;
+    z-index: 1;
+  }
+  h2 {
+    z-index: 5;
+    position: relative;
+  }
+}
