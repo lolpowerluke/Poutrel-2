@@ -22,7 +22,7 @@ header {
     height: 130px;
     box-sizing: border-box;
     background-color: transparent;
-    
+
     .img {
       max-height: unset;
       width: 100%;
@@ -444,6 +444,9 @@ header {
         font-size: 3vw;
       }
     }
+  }
+  header .header.main {
+    background-color: var(--main-bg);
   }
   .slides {
     scroll-snap-type: none;
