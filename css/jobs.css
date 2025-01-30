@@ -5,6 +5,10 @@
   .imageJobs2,
   .imageJobs1 {
     width: 100vw;
+
+    img {
+      display: block;
+    }
   }
   .imageJobs2 {
     margin-top: -10vw;
@@ -68,14 +72,15 @@
   .vacancies {
     width: 100%;
     box-sizing: border-box;
-    padding: 0 50px;
+    padding: 0 25px;
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 50px;
-    max-width: 2000px;
+    max-width: 1600px;
     margin: 0 auto;
     z-index: 1;
+    height: fit-content;
 
     h1 {
       font-size: 60px;
@@ -104,14 +109,13 @@
       width: 100%;
       box-sizing: border-box;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
       justify-content: center;
-      gap: 50px 150px;
+      gap: 50px;
 
       .vacancy {
-        aspect-ratio: 3/4;
         border-radius: 50px;
-        padding: 3vw;
+        padding: 3vh;
         box-sizing: border-box;
         display: grid;
         grid-template-rows: auto auto 1fr auto;
@@ -145,17 +149,20 @@
           font-weight: normal;
         }
         h2 {
-          font-size:3rem;
+          font-size: 40px;
           width: 100%;
           overflow: hidden;
           word-wrap: normal;
           font-family: coconat;
         }
+        h3 {
+          font-size: 24px;
+        }
         .linkToWebpage {
           text-decoration: none;
           color: black;
           border: 1px solid black;
-          padding: 0.8vw 4vw 0.8vw 2vw;
+          padding: 10px 40px 10px 20px;
           border-radius: 50px;
           position: relative;
           box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.7);
@@ -187,10 +194,31 @@
     }
     @media (max-width: 1050px) {
       .list {
-        .vacancy {
-          aspect-ratio: 4/2;
+        gap: 50px;
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .jobs {
+    margin: 0;
+
+    .imageJobs1 {
+      position: relative;
+      margin: 0;
+    }
+    .imageJobs2 {
+      div {
+        align-items: end;
+
+        a {
+          font-size: 3vw;
+          margin: 0 0 15vw 0;
         }
       }
+    }
+    .vacancies {
+      margin-top: -35vh;
     }
   }
 }
